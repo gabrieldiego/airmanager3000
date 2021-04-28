@@ -1,13 +1,16 @@
+#ifndef _UI_H_
+#include "UI.H"
+#endif
 #include <conio.h>
 #include <graphics.h>
 
-static int user_interface() {
+user_action_t user_interface() {
   int gd=DETECT,gm;
   initgraph(&gd,&gm,"C:\\tc\\bgi");
 
   circle(330,180,100);
   getch();
-  return 0;
+  return UA_CLOSE;
 }
 
 static int close_interface() {
