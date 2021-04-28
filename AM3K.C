@@ -1,6 +1,7 @@
-#ifndef _UI_H_
+#include <stdlib.h>
+
 #include "UI.H"
-#endif
+#include "ENGINE.H"
 
 #include "UI.C"
 #include "ENGINE.C"
@@ -8,10 +9,11 @@
 
 int main() {
   user_action_t user_action = UA_INIT;
+  engine_data_t *engine_data = NULL;
 
   do {
     engine_action(user_action);
-    user_action = user_interface();
+    user_action = user_interface(engine_data);
   } while (user_action != UA_CLOSE);
 
   close_interface();

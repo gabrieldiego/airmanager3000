@@ -1,12 +1,15 @@
-#ifndef _UI_H_
 #include "UI.H"
-#endif
+#include "ENGINE.H"
 #include <conio.h>
 #include <graphics.h>
 
-user_action_t user_interface() {
+static void init_graphics() {
   int gd=DETECT,gm;
   initgraph(&gd,&gm,"C:\\tc\\bgi");
+}
+
+static user_action_t user_interface(engine_data_t *data) {
+  init_graphics();
 
   circle(330,180,100);
   getch();
